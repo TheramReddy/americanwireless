@@ -1,5 +1,5 @@
 
-import MaxWidthWrapper from "./components/MaxWidthWrapper";
+import MaxWidthWrapper from "./components/components/ui/MaxWidthWrapper";
 import {Button, buttonVariants } from "./components/components/ui/button";
 import Link from 'next/link'
 import {
