@@ -19,7 +19,7 @@ const perks = [
     name: 'Guaranteed Quality',
     Icon: CheckCircle,
     description:
-      'Every asset on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
+      'Every product on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 7-day replacement guarantee.',
   },
   {
     name: 'For the Planet',
@@ -38,12 +38,12 @@ export default function Home() {
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
             Your marketplace for high-quality{' '}
             <span className='text-blue-600'>
-              digital assets
-            </span>
-            .
+              Digital Products.
+            </span >
+            
           </h1>
           <p className='mt-6 text-lg max-w-prose text-muted-foreground'>
-            Welcome to DigitalHippo. Every asset on our
+            Welcome to AmericanWireless. Every product on our
             platform is verified by our team to ensure our
             highest quality standards.
           </p>
