@@ -35,7 +35,7 @@ export const PRODUCT_CATEGORIES = [
         imageSrc: '/nav/Accesories/soundbar_new.jpg',
       },
       {
-        name: 'Headphones',
+        name: 'Phonecases',
         href: '/products?category=accesories&sort=desc',
         imageSrc: '/nav/Accesories/case.webp',
       },
