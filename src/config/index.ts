@@ -5,7 +5,7 @@ export const PRODUCT_CATEGORIES = [
     featured: [
       {
         name: 'Popular picks',
-        href: `/products?category=Latest`,
+        href: '/products?category=Latest',
         imageSrc: '/nav/ui-kits/16pro_new.jpg',
       },
       {
@@ -26,7 +26,7 @@ export const PRODUCT_CATEGORIES = [
     featured: [
       {
         name: 'Favorites',
-        href: `/products?category=accesories`,
+        href: '/products?category=accesories',
         imageSrc: '/nav/Accesories/airpods_new.jpg',
       },
       {
