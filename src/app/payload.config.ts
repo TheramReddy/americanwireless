@@ -15,11 +15,23 @@ export default buildConfig({
 
     admin: {
         bundler: webpackBundler(),
+        meta: {
+            titleSuffix: '- americanwireless',
+            favicon: '/favicon.ico',
+            ogImage: '/thumbnail.jpg',
+          },
     },
+    rateLimit: {
+        max: 2000,
+      },
+
     editor: slateEditor({}),
     db: mongooseAdapter({
         url:process.env.MONGODB_URL!,
-    })
+    }),
+    typescript: {
+        outputFile: path.resolve(__dirname, 'payload-types.ts'),
+      },
 
 
 })

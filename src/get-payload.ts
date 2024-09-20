@@ -32,11 +32,11 @@ export const getPayloadClient = async({
         return cached.client
     }
 
-    if(!cached.client){
+    if(!cached.promise){
         cached.promise = payload.init({
             secret:process.env.PAYLOAD_SECRET,
             local: initOptions?.express ? false:true,
-            ...cached(initOptions || {}),
+            ...(initOptions || {}),
         })
     }
 
