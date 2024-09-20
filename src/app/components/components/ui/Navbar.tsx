@@ -21,9 +21,9 @@ const Navbar = () => {
                             </div>
 
                             <div className='hidden z-50 lg:ml-8 lg:block lg:self-stretch'>
-              </div>
-              <NavItems />
-                        </div>
+                            </div>
+                            <NavItems />
+                            </div>
 
                     </div>
                 </MaxWidthWrapper>
