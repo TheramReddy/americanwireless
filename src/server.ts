@@ -3,6 +3,7 @@ import express from "express"
 import { getPayloadClient } from "./get-payload"
 import { nextApp, nextHandler } from "./next-utlis"
 
+
 const app = express()
 const PORT = Number(process.env.PORT) || 3000
 
@@ -16,6 +17,8 @@ const start = async() => {
             },
         },
     })
+
+
     app.use((req,res) => nextHandler(req,res))
 
     nextApp.prepare().then(()=>{
