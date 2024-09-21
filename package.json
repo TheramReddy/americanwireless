@@ -6,6 +6,7 @@
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
     "build": "next build",
     "start": "next start",
+    "postinstall": "node postinstall.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "lucide-react": "^0.441.0",
     "next": "^14.2.13",
     "payload": "latest",
+    "punycode": "^2.3.1",
     "react": "^18",
     "react-dom": "^18",
     "sonner": "^1.5.0",
