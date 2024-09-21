@@ -16,24 +16,21 @@ import { useForm } from "react-hook-form"
 
 
 
-function Page() {
-
-
-
+const Page = () => {
     const {
         register, handleSubmit, formState: { errors },
     } = useForm<TAuthCredentialsValidator>({
         resolver: zodResolver(AuthCredentialsValidator),
     })
 
-    const{data} = trpc.anyApiRoute.useQuery()
-    console.log(data)
 
+    const {mutate} = 
+    trpc.auth.createPayloadUser.useMutation({}) 
 
     const onSubmit = ({
         email, password,
     }: TAuthCredentialsValidator) => {
-        //  send data to Server
+        mutate({email,password})
     }
 
     return (
@@ -62,7 +59,6 @@ function Page() {
                                 <div className="grid gap-1 py-2">
                                     <Label htmlFor='email'>Email</Label>
                                     <Input
-                                    id="email"
                                         {...register('email')}
                                         className={cn({
                                             'focus-visible:ring-red-500': errors.email,
@@ -73,8 +69,8 @@ function Page() {
                                     <div className="grid gap-1 py-2">
                                         <Label htmlFor='password'>Password</Label>
                                         <Input
-                                        id="password"
                                             {...register('password')}
+                                            type="password"
                                             className={cn({
                                                 'focus-visible:ring-red-500': errors.password,
                                             })}
