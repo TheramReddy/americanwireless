@@ -50,7 +50,7 @@ export const getPayloadClient = async({
 
             email: {
                 transport:transporter,
-                fromAddress: "onboarding@resend.dev",
+                fromAddress: "dasavanthnani@gmail.com",
                 fromName: "americanwireless",
             },
 
