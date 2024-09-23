@@ -4,7 +4,6 @@ import {
     AuthCredentialsValidator
 } from '../lib/validator/account-credentials-validator';
 import { TRPCError } from '@trpc/server';
-import { verify } from 'crypto';
 import VerifyEmail from '@/app/components/VerifyEmail';
 import { z } from 'zod';
 
@@ -29,7 +28,7 @@ export const authRouter = router({
         if (users.length !== 0) {
           throw new TRPCError({ code: 'CONFLICT', message: 'User already exists.' });
         }
-
+        
         // Proceed to create the user
         await payload.create({
           collection: 'users',

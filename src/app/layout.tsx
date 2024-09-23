@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 import {cn} from '@/lib/utils'
 import Navbar from './components/components/ui/Navbar'
 import Providers from "@/components/Providers";
+import { Toaster } from "sonner";
 
 
 
@@ -48,6 +49,9 @@ export default function RootLayout({
           </Providers>
           
         </main>
+
+
+        <Toaster position="top-center" richColors/>
       </body>
     </html>
   );
