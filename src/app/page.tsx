@@ -37,8 +37,8 @@ export default function Home() {
         <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
             Shop at{' '}
-            <span className='text-orange-600'>
-              Boost Mobile.
+            <span className='text-blue-400'>
+              American Wireless.
             </span >
             
           </h1>
@@ -70,7 +70,7 @@ export default function Home() {
                 key={perk.name}
                 className='text-center md:flex md:items-start md:text-left lg:block lg:text-center'>
                 <div className='md:flex-shrink-0 flex justify-center'>
-                  <div className='h-16 w-16 flex items-center justify-center rounded-full bg-orange-100 text-orange-900'>
+                  <div className='h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-800'>
                     {<perk.Icon className='w-1/3 h-1/3' />}
                   </div>
                 </div>

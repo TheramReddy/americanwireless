@@ -49,7 +49,7 @@ interface VerifyEmailProps {
         <div className='flex h-full flex-col items-center justify-center'>
           <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
             <Image
-              src='/public/hippo-email-sent.png'
+              src='/hippo-email-sent.png'
               fill
               alt='the email was sent'
             />
