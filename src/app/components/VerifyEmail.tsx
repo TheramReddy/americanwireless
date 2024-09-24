@@ -6,6 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { buttonVariants } from './components/ui/button'
 
+
+
+
+
 interface VerifyEmailProps {
     token: string
   }
@@ -14,7 +18,15 @@ interface VerifyEmailProps {
     const { data, isLoading, isError } =
       trpc.auth.verifyEmail.useQuery({
         token,
+        
       })
+
+      //just checking might remove later
+
+      console.log('isLoading:', isLoading);
+      console.log('isError:', isError);
+      console.log('Data:', data);
+
   
     if (isError) {
       return (
@@ -32,11 +44,12 @@ interface VerifyEmailProps {
     }
   
     if (data?.success) {
+      
       return (
         <div className='flex h-full flex-col items-center justify-center'>
           <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
             <Image
-              src='/hippo-email-sent.png'
+              src='/public/hippo-email-sent.png'
               fill
               alt='the email was sent'
             />
@@ -70,6 +83,7 @@ interface VerifyEmailProps {
         </div>
       )
     }
+    
   }
   
   export default VerifyEmail
