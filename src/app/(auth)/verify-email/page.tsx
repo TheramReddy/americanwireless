@@ -10,7 +10,7 @@ interface PageProps {
 
 const VerifyEmailPage = ({ searchParams }: PageProps) => {
   const token = searchParams.token
-  const toEmail = searchParams.to
+  const toEmail = searchParams.toa
 
   return (
     <div className='container relative flex pt-20 flex-col items-center justify-center lg:px-0'>
@@ -23,7 +23,7 @@ const VerifyEmailPage = ({ searchParams }: PageProps) => {
           <div className='flex h-full flex-col items-center justify-center space-y-1'>
             <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
               <Image
-                src='path/to/hippo-email-sent.png'
+                src='/hippo-email-sent.png'
                 fill
                 alt='hippo email sent image'
                 style={{ objectFit: 'cover' }}
