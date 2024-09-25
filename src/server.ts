@@ -9,6 +9,7 @@ import {appRouter } from "./trpc"
 
 
 
+
 const app = express()
 const PORT = Number(process.env.PORT) || 3000
 
@@ -19,6 +20,9 @@ const createContext = ({
     req,
     res,
 })
+
+export type ExpressContext = Awaited<ReturnType<typeof createContext>>;
+
 
 const start = async() => {
 

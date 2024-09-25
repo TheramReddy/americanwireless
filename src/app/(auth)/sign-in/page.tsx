@@ -40,27 +40,29 @@ const Page = () => {
   // Declare loading state manually
   const [isLoading, setIsLoading] = useState(false);
 
-  const { mutate } = trpc.auth.createPayloadUser.useMutation({
-    onError: (err) => {
-      setIsLoading(false); // Stop loading after an error
+  const { mutate: signIn } = trpc.auth.signIn.useMutation({
+    
+    onSuccess:() => {
+    toast.success('Signed in successfully')  
+    router.refresh()
 
-      if (err.data?.code === 'CONFLICT') {
-        toast.error('This email is already in use. Sign in instead?');
-        return;
-      }
-
-      if (err instanceof ZodError) {
-        toast.error(err.issues[0].message);
-        return;
-      }
-
-      toast.error('Something went wrong. Please try again.');
+    if(origin){
+      router.push(`${origin}`)
+      return
+    }
+    if(isSeller){
+      router.push('/sell')
+      return
+    }
+    router.push('/')
     },
-    onSuccess: ({ sentToEmail }) => {
-      setIsLoading(false); // Stop loading on success
-      toast.success(`Verification email sent to ${sentToEmail}.`);
-      router.push('/verify-email?to=' + sentToEmail);
+    onError:(err) => {
+      if(err.data?.code === 'UNAUTHORIZED') {
+        toast.error('Invalid email or password.')
+      }
     },
+
+
   });
 
   const onSubmit = ({
@@ -68,7 +70,7 @@ const Page = () => {
     password,
   }: TAuthCredentialsValidator) => {
     setIsLoading(true); // Start loading when the form is submitted
-    mutate({ email, password });
+    signIn({ email, password });
   };
 
   return (
@@ -78,7 +80,8 @@ const Page = () => {
           <div className='flex flex-col items-center space-y-2 text-center'>
             <Icons.logo className='h-20 w-20' />
             <h1 className='text-2xl font-semibold tracking-tight'>
-              Sign in to your Account
+              Sign in to your Account {isSeller ? 'seller' : ''}{' '}
+              account
             </h1>
 
             <Link
